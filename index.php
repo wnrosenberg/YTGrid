@@ -26,7 +26,6 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
 	// get results from search; converting xml to array
 	$url = "http://gdata.youtube.com/feeds/api/videos?q=".urlencode($_GET['q'])."&orderby=viewCount&max-results=10&v=2";
 	$arr = json_decode(json_encode((array) simplexml_load_string(file_get_contents($url))),1);
-	unset($url);
 	$arr = $arr['entry'];
 	foreach ($arr as $a) {
 		$id = array_pop(explode(":",$a['id']));
@@ -88,7 +87,7 @@ function outputGrid($grid, $return=false) {
 	<p><strong>Youtube Grid v0.1</strong></p>
 </div>
 <div class="right">
-	<form action="" method="GET"><p>Search: <input type="search" name="q" value="<?=(isset($_GET['q']) ? $_GET['q'] : "")?>"><input type="submit" value="Search"></p></form>
+	<form action="" method="GET"><p>Search: <input type="search" name="q" value="<?=(isset($_GET['q']) ? $_GET['q'] : "cats vs dogs")?>"><input type="submit" value="Search"></p></form>
 </div>
 <div class="clear"></div>
 <?
