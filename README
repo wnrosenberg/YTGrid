@@ -6,5 +6,3 @@ A user can search for videos using the YouTube API.  The results are shown in a 
 TODO:
 - Videos are now retrieved, but still need to be added to the grid.
 - Write a better sizing algorithm.  Ideally, a set of results should include thumbs of all sizes.  However, if there's one video in the result set that many, many views, and all the other videos in the set have very few views, the algorithm will assign one large thumb and the rest tiny, contrary to the ideal case.
-
-
